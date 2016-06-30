@@ -2,6 +2,7 @@ var path = require("path")
 var webpack = require("webpack")
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var production = false //process.argv.indexOf("--production") > -1
+var autoprefixer = require("autoprefixer")
 
 module.exports = {
   entry: {
@@ -44,7 +45,7 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          loader: "style-loader!css-loader"
+          loader: "style-loader!css-loader" 
         },
         {
           test: /\.(ico|jpe?g|png|gif)$/,
@@ -66,6 +67,13 @@ module.exports = {
         },
       ],
     },
+
+    sassLoader: {
+      includePaths: [
+        path.resolve(__dirname, '../src/styles'),
+      ]
+    },
+
     plugins: (
       [
         new ExtractTextPlugin("[name].css", {disable: !production}),
@@ -83,7 +91,7 @@ module.exports = {
       )
     ),
   cssnext: {
-  sourcemap: !production,
-  compress: production,
+    sourcemap: !production,
+    compress: production,
   },
 }

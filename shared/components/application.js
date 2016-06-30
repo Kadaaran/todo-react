@@ -6,6 +6,7 @@ import React from 'react'
 import addTodoAction from '../actions/addTodo'
 import deleteTodoAction from '../actions/deleteTodo'
 import updateTodoAction from '../actions/updateTodo'
+require("../styles/index.css");
 
 
 

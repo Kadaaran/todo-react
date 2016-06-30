@@ -1,4 +1,4 @@
-import express from 'express';
+import express from 'express'
 import ReactDOM from 'react-dom/server'
 import { createElementWithContext } from 'fluxible-addons-react'
 
@@ -27,7 +27,7 @@ server.use((req, res) => {
 });
 
 server.listen(3000, ()=> {
-  console.log("Server started at port 3000")
+  console.log("Magic happens on port 3000 🚀 ! ")
 })
 
 export default server;
